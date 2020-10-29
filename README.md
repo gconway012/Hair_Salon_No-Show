@@ -26,15 +26,17 @@ This project explores insights about no-show appointments at a hair salon.
 
 ## References
 
-1. *Using flexdashboard*, https://rmarkdown.rstudio.com/flexdashboard/using.html.
+1. Hair Salon No-Show Dataset from Kaggle at https://www.kaggle.com/frederickferguson/hair-salon-no-show-data-set)
 
-2. *Create Awesome HTML Table with knitr::kable and kableExtra*, by Hao Zhu, https://haozhu233.github.io/kableExtra/awesome_table_in_html.html#getting_started.
+2. *Using flexdashboard*, https://rmarkdown.rstudio.com/flexdashboard/using.html.
 
-3. *Deploying flexdashboard on GitHub Pages*, by Rami Krispin, dated Sep 4, 2020 at https://ramikrispin.github.io/2020/09/deploying-flexdashboard-on-github-pages/. Provided concise steps to follow to enable repository to host an .html file on GitHub Pages.
+3. *Create Awesome HTML Table with knitr::kable and kableExtra*, by Hao Zhu, https://haozhu233.github.io/kableExtra/awesome_table_in_html.html#getting_started.
 
-4. *RMarkdown directing output file into a directory*, NicE's answer, dated Mar 9, 2015 at https://stackoverflow.com/questions/28894515/rmarkdown-directing-output-file-into-a-directory. Provided necessary code used to knit document/file to a different directory.
+4. *Deploying flexdashboard on GitHub Pages*, by Rami Krispin, dated Sep 4, 2020 at https://ramikrispin.github.io/2020/09/deploying-flexdashboard-on-github-pages/. Provided concise steps to follow to enable repository to host an .html file on GitHub Pages.
 
-5. Book - *R for Data Science* by Hadley Wickham & Garrett Grolemund
+5. *RMarkdown directing output file into a directory*, NicE's answer, dated Mar 9, 2015 at https://stackoverflow.com/questions/28894515/rmarkdown-directing-output-file-into-a-directory. Provided necessary code used to knit document/file to a different directory.
+
+6. Book - *R for Data Science* by Hadley Wickham & Garrett Grolemund
 
 ***
 
@@ -44,7 +46,8 @@ This project explores insights about no-show appointments at a hair salon.
 
 ### Files NOT included
 
-
+* Data files
+    + Data files may be downloaded from the Kaggle.com website (see link under Reference 1 above).
 
 ***
 
