@@ -58,6 +58,7 @@ This project explores insights about no-show appointments at a hair salon.
 * RStudio version 1.3.1073
 * MySQL Community Server version 8.0.19
 * MySQL Workbench version 8.0.19
+* Microsoft VS Code version 1.50.1
 
 ## R Packages Utilized
 
