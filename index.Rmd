@@ -22,16 +22,28 @@ setwd("~/Documents/GitHub/Hair_Salon_No-Show/")
 ```
 
 ```{r packages, message=FALSE}
-library(tidyverse)
-library(kableExtra)
+# check if package is installed and then load package for use
+if (!require("tidyverse")){
+  install.packages("tidyverse", 
+                   repos = "https://cran.rstudio.com/",
+                   quiet = T)
+  require("tidyverse")
+}
+
+if (!require("kableExtra")){
+  install.packages("kableExtra", 
+                   repos = "https://cran.rstudio.com/",
+                   quiet = T)
+  require("kableExtra")
+}
 ```
 
 ```{r data_file_names}
-# - local data files stored in the below datafolder for mysql server to access
+# local data files stored in the below datafolder for mysql server to access
 datafolder <- "/usr/local/mysql-8.0.19-macos10.15-x86_64/mylocaldata/"
-datafilenames <- dir("/usr/local/mysql-8.0.19-macos10.15-x86_64/mylocaldata/")
+datafilenames <- dir("/usr/local/mysql-8.0.19-macos10.15-x86_64/mylocaldata/",
+                     pattern = ".csv")
 datafilepaths <- paste(datafolder, datafilenames, sep = "")
-#rm(datafilenames, datafolder)
 ```
 
 Welcome
@@ -538,46 +550,46 @@ Starting Data Tables/Files {data-navmenu="DB Creation"}
 ```{r pull_name_and_cols}
 # initialize empty vector and list
 tablename <- vector(length = length(datafilenames))
-  
+
 tablecols <- vector(mode = "list", length = length(datafilenames))
 
 
 # get table names and column headings
 for (i in 1:length(datafilepaths)){
-  
-  # extract table name from filename
-  tablename[i] <- str_split(datafilenames[i], ".csv") %>%
-    unlist() %>%
-    .[1]
-  
-  # temp hold of column names in list
-  tablecols[[i]] <- read_csv(datafilepaths[i], n_max = 1) %>%
-    names()
-
-  rm(i)
+    
+    # extract table name from filename
+    tablename[i] <- str_split(datafilenames[i], ".csv") %>%
+        unlist() %>%
+        .[1]
+    
+    # temp hold of column names in list
+    tablecols[[i]] <- read_csv(datafilepaths[i], n_max = 1) %>%
+        names()
+    
+    rm(i)
 }
 
 # create empty dataframe
 tempdf <- as.data.frame(matrix(nrow = 14, ncol = 6))
-  
-  # fill dataframe
+
+# fill dataframe
 names(tempdf) <- tablename
-  
+
 for (i in 1:ncol(tempdf)){
     
-  ntimes <- nrow(tempdf) - length(tablecols[[i]])
+    ntimes <- nrow(tempdf) - length(tablecols[[i]])
     
-  tempdf[i] <- c(tablecols[[i]], rep("---", times = ntimes))
+    tempdf[i] <- c(tablecols[[i]], rep("---", times = ntimes))
     
-  rm(i, ntimes)
+    rm(i, ntimes)
     
-  }
+}
 
 rm (tablename, tablecols)
 
 # display table names and columns in chart
 tempdf %>%
-  kable(format = "html", escape = F) %>%
+    kable(format = "html", escape = F) %>%
     kable_styling(bootstrap_options = "striped", full_width = F, 
                   position = "left")
 
@@ -585,5 +597,12 @@ tempdf %>%
 rm (tempdf)
 ```
 
+
 DB Structure After Redesign {data-navmenu="DB Creation"}
 ===============================================================================
+
+
+
+Data Dictionary {data-navmenu="DB Creation"}
+===============================================================================
+
