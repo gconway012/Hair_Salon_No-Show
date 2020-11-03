@@ -83,5 +83,4 @@ This project explores insights about no-show appointments at a hair salon.
 
 15. *MySQL Crash Course* by Ben Forta.
 
-***
-
+16. 
