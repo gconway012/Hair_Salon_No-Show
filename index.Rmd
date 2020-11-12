@@ -1341,3 +1341,29 @@ cancellations_query("cancellations_report") %>%
                 position = "left")
 ```
 
+No-Show Report {data-navmenu="Reports"}
+===============================================================================
+
+### No-Show Report
+
+```{r no_show_report}
+source("R_scripts/no_show_report.R")
+
+noshow_query("noshow_report") %>%
+  kable(format = "html", escape = F) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F,
+                position = "left")
+```
+
+Price Differences Report {data-navmenu="Reports"}
+===============================================================================
+
+```{r price_diff_report}
+source("R_scripts/price_diff_report.R")
+
+price_diff_query("price_diff_report") %>%
+  kable(format = "html", escape = F) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F,
+                position = "left")
+```
+
