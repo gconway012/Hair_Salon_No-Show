@@ -35,6 +35,16 @@ This project explores insights about no-show appointments at a hair salon.
 * Data files
     + Data files may be downloaded from the Kaggle.com website (see link under Reference 1 below).
 
+* Database connection credentials
+    + Database connection credentials sourced through a separate .R script.
+    + Connection to database done using the following code structure:
+        + `conn <- dbConnect(MySQL(),
+                  username = keyring::key_list("dbkeyringname")[1,2],
+                  password = keyring::key_get("dbkeyringname", "dbusername"),
+                  host = "localhost",
+                  port = 3306,
+                  dbname = "dbname")`
+
 ***
 
 ## Software Utilized
@@ -53,7 +63,14 @@ This project explores insights about no-show appointments at a hair salon.
 
 ## References
 
-1. Hair Salon No-Show Dataset from Kaggle at https://www.kaggle.com/frederickferguson/hair-salon-no-show-data-set)
+REFERENCE NOTES:
+* References are, mostly, listed in the order that I used them.
+* Website links are provided for those references I either had bookmarked previously or accessed during this project.
+* I hope that some or all of these references are helpful when working on your own project.
+
+<br>
+
+1. Hair Salon No-Show Dataset from Kaggle at https://www.kaggle.com/frederickferguson/hair-salon-no-show-data-set).
 
 2. *Using flexdashboard*, https://rmarkdown.rstudio.com/flexdashboard/using.html.
 
@@ -83,4 +100,14 @@ This project explores insights about no-show appointments at a hair salon.
 
 15. *MySQL Crash Course* by Ben Forta.
 
-16. 
+16. *mysql query not recognizing string*, spencer7593's answer, dated Mar 11, 2016 at https://stackoverflow.com/questions/35951305/mysql-query-not-recognizing-string. For using HEX() to determine if string values in column included carriage return character (i.e., \r) and to fix issue in `LINES TERMINATED BY` portion of `LOAD DATA LOCAL INFILE` statement.
+
+17. *Securing Credentials*, https://db.rstudio.com/best-practices/managing-credentials/. Good info about using the keyring package to secure connection credentials.
+
+18. FontAwesome website, https://fontawesome.com/v4.7.0/icons/. For icon codes used in value boxes on dashboards.
+
+19. GitHub post - 256 COLORS - CHEAT SHEET, https://jonasjacek.github.io/colors/, by Jonas Jacek. Referenced for hexidecimal color codes used in value boxes on dashboards.
+
+20. *Order discrete x scale by frequency/value*, Axeman and Yuriy Petrovskiy's answer, dated Jul 13, 2018 and Sep 11, 2018 at https://stackoverflow.com/questions/3253641/order-discrete-x-scale-by-frequency-value. For reordering DOW on barplot.
+
+21. *Joining three tables using MySQL*, PHP Ferrari's answer, dated Sep 21, 2010 at https://stackoverflow.com/questions/3709560/joining-three-tables-using-mysql. For using normalize form structure for joining three tables in one query without having to use subqueries.
