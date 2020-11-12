@@ -347,7 +347,7 @@ matrix(c(unlist(lapply(fb, function(x){sort(unique(x),
 ```
 
 
-```{r}
+```{r clear_fb_var}
 rm(fb)
 ```
 
@@ -457,7 +457,7 @@ matrix(unlist(lapply(ns,
                 position = "left")
 ```
 
-```{r}
+```{r clear_ns_var}
 rm(ns)
 ```
 
@@ -564,6 +564,7 @@ tempdf %>%
     kable_styling(bootstrap_options = "striped", full_width = F, 
                   position = "left")
 
+# clear temp variables
 rm(missinglist, tempdf)
 ```
 
@@ -631,7 +632,7 @@ matrix(c(unlist(lapply(plr,
 ```
 
 
-```{r}
+```{r clear_plr_var}
 rm(plr)
 ```
 
@@ -734,6 +735,7 @@ tempdf %>%
     kable_styling(bootstrap_options = "striped", full_width = F, 
                   position = "left")
 
+# clear temp variables
 rm(missinglist, tempdf)
 ```
 
@@ -765,7 +767,7 @@ matrix(lapply(rt,
 ```
 
 
-```{r}
+```{r clear_rt_var}
 rm(rt)
 ```
 
@@ -879,7 +881,7 @@ matrix(unlist(lapply(sl,
 ```
 
 
-```{r}
+```{r clear_sl_var}
 rm(sl)
 ```
 
