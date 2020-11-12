@@ -1378,4 +1378,3 @@ price_diff_query("price_diff_report") %>%
   kable_styling(bootstrap_options = "striped", full_width = F,
                 position = "left")
 ```
-
