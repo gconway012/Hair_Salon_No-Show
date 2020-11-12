@@ -1313,6 +1313,16 @@ Row
 staff_query("cancellations_by_staff")
 ```
 
+Row
+-------------------------------------------------------------------------------
+
+### No-Shows by Staff
+
+```{r noshows_by_staff}
+staff_query("noshows_by_staff")
+```
+
+
 Walk-Ins Report {data-navmenu="Reports"}
 ===============================================================================
 
@@ -1357,6 +1367,8 @@ noshow_query("noshow_report") %>%
 
 Price Differences Report {data-navmenu="Reports"}
 ===============================================================================
+
+### Price Differences Report
 
 ```{r price_diff_report}
 source("R_scripts/price_diff_report.R")
