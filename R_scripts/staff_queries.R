@@ -58,6 +58,23 @@ staff_query <- function (query){
                 xlab("") +
                 ylab("# of Cancellations") +
                 theme(legend.title = element_blank(),
+                      legend.position = "none") ),
+            
+            # show plot
+            noshows_by_staff = ggplotly(dbGetQuery(conn,
+                                            "SELECT st.staff_name, 
+                                               count(ns.staff_id) as num_noshows
+                                             FROM no_show_report ns
+                                             JOIN staff st ON ns.staff_id = st.staff_id
+                                            GROUP BY staff_name") %>%
+                ggplot(aes(x = staff_name, y = num_noshows, fill = staff_name)) +
+                geom_bar(stat = "identity") +
+                geom_text(aes(label = num_noshows),
+                          position = position_nudge(y = 2),
+                          size = 3) +
+                xlab("") +
+                ylab("# of No-Shows") +
+                theme(legend.title = element_blank(),
                       legend.position = "none") )
             
     )
