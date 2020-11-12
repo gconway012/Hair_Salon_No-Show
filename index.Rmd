@@ -1316,6 +1316,8 @@ staff_query("cancellations_by_staff")
 Walk-Ins Report {data-navmenu="Reports"}
 ===============================================================================
 
+### Walk-Ins Report
+
 ```{r walkins_report}
 source("R_scripts/WalkIns_report.R")
 
@@ -1328,7 +1330,14 @@ walkins_query("walkins_report") %>%
 Cancellations Report {data-navmenu="Reports"}
 ===============================================================================
 
-```{r cancellations_report}
+### Cancellations Report
 
+```{r cancellations_report}
+source("R_scripts/cancellation_report.R")
+
+cancellations_query("cancellations_report") %>%
+  kable(format = "html", escape = F) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F,
+                position = "left")
 ```
 
