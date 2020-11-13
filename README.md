@@ -3,6 +3,23 @@
 
 ***
 
+## Project Status
+
+<table>
+    <tr>
+        <td>
+            <p>
+                <meter low="25" high="75" max="100" value="45"> 45%</meter>
+                45%
+            </p>
+        <td/>
+        <td>
+            <p> &emsp; **In Progress**
+            </p>
+        </td>
+    </tr>
+</table>
+
 ## Project Description
 
 This project explores insights about no-show appointments at a hair salon.
@@ -22,6 +39,7 @@ This project explores insights about no-show appointments at a hair salon.
 
 ## Important Notes
 
+ 
 ***
 
 ## About this repository
@@ -70,7 +88,7 @@ REFERENCE NOTES:
 
 <br>
 
-1. Hair Salon No-Show Dataset from Kaggle at https://www.kaggle.com/frederickferguson/hair-salon-no-show-data-set).
+1. Hair Salon No-Show Dataset from Kaggle at https://www.kaggle.com/frederickferguson/hair-salon-no-show-data-set.
 
 2. *Using flexdashboard*, https://rmarkdown.rstudio.com/flexdashboard/using.html.
 
@@ -111,3 +129,9 @@ REFERENCE NOTES:
 20. *Order discrete x scale by frequency/value*, Axeman and Yuriy Petrovskiy's answer, dated Jul 13, 2018 and Sep 11, 2018 at https://stackoverflow.com/questions/3253641/order-discrete-x-scale-by-frequency-value. For reordering DOW on barplot.
 
 21. *Joining three tables using MySQL*, PHP Ferrari's answer, dated Sep 21, 2010 at https://stackoverflow.com/questions/3709560/joining-three-tables-using-mysql. For using normalize form structure for joining three tables in one query without having to use subqueries.
+
+22. *Vignette: Downloadable tables in RMarkdown with the DT package*, https://www.r-bloggers.com/2019/12/vignette-downloadable-tables-in-rmarkdown-with-the-dt-package/. For creating filterable/searchable tables.
+
+23. *Data Table Options*, https://rstudio.github.io/DT/options.html. For creating filterable/searchable tables.
+
+24. *Column alignment in DT datatable*, zx8754 and G. Cocca's answer, dated Sep 17, 2020 and Mar 2, 2016 at https://stackoverflow.com/questions/35749389/column-alignment-in-dt-datatable. For centering columns when using DT::datatable() in R.
