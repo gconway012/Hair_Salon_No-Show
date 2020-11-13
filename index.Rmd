@@ -20,9 +20,6 @@ knitr::opts_chunk$set(echo = FALSE)
 ```{r packages, message=FALSE}
 # check if package is installed and then load package for use
 source("R_scripts/requirements.R")
-
-# remove null variables created after packages load
-rm(kableExtra, plotly, RMySQL, tidyverse)
 ```
 
 ```{r data_file_names}
@@ -1241,16 +1238,20 @@ flexdashboard::valueBox(clients_query("total_onetime_clients_on_receipts_excl_wa
 Row
 -------------------------------------------------------------------------------
 
-### 10 Most Frequent Clients (excludes walk-ins)
+### 10 Most Frequent Clients (excludes walk-ins) (scrollable)
 
 ```{r frequent_clients_table}
 clients_query("most_freq_clients_excl_walkins") %>%
-  DT::datatable(filter = "top",
-                options = list(autoWidth = T,
-                               pageLength = 10,
-                               autoHideNavigation = F,
-                               dom = "Bfrtip",
-                               searchHighlight = T
+  datatable(filter = "top",
+            extensions = "Scroller",
+            options = list(autoWidth = T,
+                           deferRender = T,
+                           scrollY = 370,
+                           scroller = T,
+                           dom = "frtip",
+                           searchHighlight = T,
+                           columnDefs = list(list(className = "dt-center",
+                                                  targets = "_all"))
                                )
                 )
 ```
@@ -1326,55 +1327,91 @@ staff_query("noshows_by_staff")
 Walk-Ins Report {data-navmenu="Reports"}
 ===============================================================================
 
-### Walk-Ins Report
+### Walk-Ins Report (scrollable)
 
 ```{r walkins_report}
 source("R_scripts/WalkIns_report.R")
 
 walkins_query("walkins_report") %>%
-  kable(format = "html", escape = F) %>%
-  kable_styling(bootstrap_options = "striped", full_width = F,
-                position = "left")
+  datatable(filter = "top",
+            extensions = "Scroller",
+            options = list(autoWidth = T,
+                           deferRender = T,
+                           scrollY = 370,
+                           scroller = T,
+                           dom = "frtip",
+                           searchHighlight = T,
+                           columnDefs = list(list(className = "dt-center",
+                                                  targets = "_all"))
+                               )
+                )
 ```
 
 Cancellations Report {data-navmenu="Reports"}
 ===============================================================================
 
-### Cancellations Report
+### Cancellations Report (scrollable)
 
 ```{r cancellations_report}
 source("R_scripts/cancellation_report.R")
 
 cancellations_query("cancellations_report") %>%
-  kable(format = "html", escape = F) %>%
-  kable_styling(bootstrap_options = "striped", full_width = F,
-                position = "left")
+  datatable(filter = "top",
+            extensions = "Scroller",
+            options = list(autoWidth = T,
+                           deferRender = T,
+                           scrollY = 740,
+                           scroller = T,
+                           dom = "frtip",
+                           searchHighlight = T,
+                           columnDefs = list(list(className = "dt-center",
+                                                  targets = "_all"))
+                               )
+                )
 ```
 
 No-Show Report {data-navmenu="Reports"}
 ===============================================================================
 
-### No-Show Report
+### No-Show Report (scrollable)
 
 ```{r no_show_report}
 source("R_scripts/no_show_report.R")
 
 noshow_query("noshow_report") %>%
-  kable(format = "html", escape = F) %>%
-  kable_styling(bootstrap_options = "striped", full_width = F,
-                position = "left")
+  datatable(filter = "top",
+            extensions = "Scroller",
+            options = list(autoWidth = T,
+                           deferRender = T,
+                           scrollY = 740,
+                           scroller = T,
+                           dom = "frtip",
+                           searchHighlight = T,
+                           columnDefs = list(list(className = "dt-center",
+                                                  targets = "_all"))
+                               )
+                )
 ```
 
 Price Differences Report {data-navmenu="Reports"}
 ===============================================================================
 
-### Price Differences Report
+### Price Differences Report (scrollable)
 
 ```{r price_diff_report}
 source("R_scripts/price_diff_report.R")
 
 price_diff_query("price_diff_report") %>%
-  kable(format = "html", escape = F) %>%
-  kable_styling(bootstrap_options = "striped", full_width = F,
-                position = "left")
+  datatable(filter = "top",
+            extensions = "Scroller",
+            options = list(autoWidth = T,
+                           deferRender = T,
+                           scrollY = 740,
+                           scroller = T,
+                           dom = "frtip",
+                           searchHighlight = T,
+                           columnDefs = list(list(className = "dt-center",
+                                                  targets = "_all"))
+                               )
+                )
 ```
