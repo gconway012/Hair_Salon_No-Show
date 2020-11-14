@@ -5,20 +5,8 @@
 
 ## Project Status
 
-<table>
-    <tr>
-        <td>
-            <p>
-                <meter low="25" high="75" max="100" value="45"> 45%</meter>
-                45%
-            </p>
-        <td/>
-        <td>
-            <p> &emsp; **In Progress**
-            </p>
-        </td>
-    </tr>
-</table>
+![](https://img.shields.io/badge/Project--Status-45%25-yellow)
+           
 
 ## Project Description
 
@@ -135,3 +123,5 @@ REFERENCE NOTES:
 23. *Data Table Options*, https://rstudio.github.io/DT/options.html. For creating filterable/searchable tables.
 
 24. *Column alignment in DT datatable*, zx8754 and G. Cocca's answer, dated Sep 17, 2020 and Mar 2, 2016 at https://stackoverflow.com/questions/35749389/column-alignment-in-dt-datatable. For centering columns when using DT::datatable() in R.
+
+25. https://shields.io. Used for badges.
