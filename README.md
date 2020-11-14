@@ -6,28 +6,48 @@
 ## Project Status
 
 ![](https://img.shields.io/badge/Project--Status-45%25-yellow)
-           
+
+![GitHub last commit](https://img.shields.io/github/last-commit/gconway012/Hair_Salon_No-Show)
+
+***
+
+## Project Output Link(s)
+
+**\*Pending\***
 
 ## Project Description
 
-This project explores insights about no-show appointments at a hair salon.
+This project explores insights about hair salon appointments.
 
-## Other Project Goals
+## Project Scenario:
+
+* A small hair salon wants to understand its business and related data to better serve their clients.  
+* Although they use a POS system, the owner/manager would like to look deeper than the receipts.
+* The salon manager and select staff members indicated that they typically use Excel to generate reports and/or review data. However, they feel that using Excel is becoming obselete for their needs.
+* As an exploratory step before developing a longer-term strategy for their data and analytics needs, the business would like to see an example(s) of:
+    + A better data management tool/platform.
+    + Another type of dashboarding and/or reporting tool/platform.
+    + Insights to be gained from those dashboards/reports.
+    + Different analysis techniques employed and what insights those methods can provide.
+
+## Non-scenario Project Goals
 
 * Use R/RStudio & MySQL, separately and as integrated tools, to perform analysis.
 * Set up a database schema as a simulated business requirement, which includes:
     + Raw data exploration
     + Database table design and relationship identification
     + Raw data extraction and upload into MySQL
-* Use flexdashboards in RStudio/RMarkdown as a workflow framework.
+* Use flexdashboards in RStudio/RMarkdown as a workflow framework
 * Develop dashboard page(s) 
+* Use HTML tags and other packages to experiement with RMarkdown HTML output file and Markdown document design features
 * Practice other modeling techniques
 
 ***
 
-## Important Notes
+## Notes
 
- 
+* This output/website (link above) is best viewed with a large/maximized window. A larger monitor/screen (24" or larger) may be required.
+
 ***
 
 ## About this repository
@@ -41,29 +61,27 @@ This project explores insights about no-show appointments at a hair salon.
 * Data files
     + Data files may be downloaded from the Kaggle.com website (see link under Reference 1 below).
 
-* Database connection credentials
-    + Database connection credentials sourced through a separate .R script.
-    + Connection to database done using the following code structure:
-        + `conn <- dbConnect(MySQL(),
-                  username = keyring::key_list("dbkeyringname")[1,2],
-                  password = keyring::key_get("dbkeyringname", "dbusername"),
-                  host = "localhost",
-                  port = 3306,
-                  dbname = "dbname")`
-
 ***
 
 ## Software Utilized
 
-* Mac OSx Catalina version 10.15.7
-* R (for Mac) version 4.0.2 (2020-06-22) "Taking Off Again"
-* RStudio version 1.3.1073
-* MySQL Community Server version 8.0.19
-* MySQL Workbench version 8.0.19
-* Microsoft VS Code version 1.50.1
-* Microsoft Excel for Mac version 16.42
+<details>
+    <summary> Software list
+        <ol>
+            <li>Mac OSx Catalina version 10.15.7</li>
+            <li>R (for Mac) version 4.0.2 (2020-06-22) "Taking Off Again"</li>
+            <li>RStudio version 1.3.1073</li>
+            <li>MySQL Community Server version 8.0.19</li>
+            <li>MySQL Workbench version 8.0.19</li>
+            <li>Microsoft VS Code version 1.50.1</li>
+            <li>Microsoft Excel for Mac version 16.42</li>
+        </ol>
+    </summary>
+</details>
 
 ## R Packages Utilized
+
+
 
 ***
 
