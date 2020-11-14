@@ -54,9 +54,10 @@ This project explores insights about hair salon appointments.
 
 ### Files included
 
+```
 .
 ├── docs
-│   └── index.html (directory & file pending)        
+│   └── index.html                  ## directory & file pending        
 ├── img_files
 │   └── hair_salon_noshow_erd.jpg
 ├── mysql_scripts
@@ -83,10 +84,16 @@ This project explores insights about hair salon appointments.
 ├── .gitignore
 ├── index.Rmd
 └── README.md
+```
 
 ### Files NOT included
 
-* Data files - Files may be downloaded from the Kaggle.com website (see link under Reference 1 below).
+```
+.
+└── data_files
+```
+
+\*Data files - Files may be downloaded from the Kaggle.com website (see link under Reference 1 below).
 
 ***
 
@@ -112,6 +119,15 @@ This project explores insights about hair salon appointments.
         <li>RMySQL version 0.10.20</li>
         <li>plotly version 4.9.2.1</li>
         <li>DT version 0.15</li>
+</details>
+
+## VS Code Extensions (helpful for this project)
+
+<details>
+    <summary>Extension list</summary>
+        <li>Ascii Tree Generator version 1.2.4</li>
+        <li>Bracket Pair Colorizer 2 version 0.2.0</li>
+        <li>vscode-icons version 11.0.0</li>
 </details>
 
 ***
@@ -154,5 +170,6 @@ This project explores insights about hair salon appointments.
             <li>*Data Table Options*, https://rstudio.github.io/DT/options.html. For creating filterable/searchable tables.</li>
             <li>*Column alignment in DT datatable*, zx8754 and G. Cocca's answer, dated Sep 17, 2020 and Mar 2, 2016 at https://stackoverflow.com/questions/35749389/column-alignment-in-dt-datatable. For centering columns when using DT::datatable() in R.</li>
             <li>https://shields.io. Used for badges.</li>
+            <li>*Is there a way to represent a directory tree in a Github README.md?*, joe sepi's answer, dated Aug 13, 2016. Use triple backticks to get ASCII tree to render properly in Markdown. 
         </ol>
 </details>
