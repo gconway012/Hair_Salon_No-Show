@@ -54,12 +54,39 @@ This project explores insights about hair salon appointments.
 
 ### Files included
 
-
+.
+├── docs
+│   └── index.html (directory & file pending)        
+├── img_files
+│   └── hair_salon_noshow_erd.jpg
+├── mysql_scripts
+│   ├── cancellations_table.sql
+│   ├── clients_table.sql
+│   ├── future_bookings_table.sql
+│   ├── no_shows_table.sql
+│   ├── product_listing_table.sql
+│   ├── receipt_transactions_table.sql
+│   ├── service_listing_table.sql
+│   └── staff_table.sql
+├── R_scripts
+│   ├── cancellation_report.R
+│   ├── client_queries.R
+│   ├── data_extract.R
+│   ├── data_file_names.R
+│   ├── getTable.R
+│   ├── no_show_report.R
+│   ├── price_diff_report.R
+│   ├── requirements.R
+│   ├── sales_queries.R
+│   ├── staff_queries.R
+│   └── WalkIns_report.R
+├── .gitignore
+├── index.Rmd
+└── README.md
 
 ### Files NOT included
 
-* Data files
-    + Data files may be downloaded from the Kaggle.com website (see link under Reference 1 below).
+* Data files - Files may be downloaded from the Kaggle.com website (see link under Reference 1 below).
 
 ***
 
@@ -67,76 +94,65 @@ This project explores insights about hair salon appointments.
 
 <details>
     <summary>Software list</summary>
-            <li>Mac OSx Catalina version 10.15.7</li>
-            <li>R (for Mac) version 4.0.2 (2020-06-22) "Taking Off Again"</li>
-            <li>RStudio version 1.3.1073</li>
-            <li>MySQL Community Server version 8.0.19</li>
-            <li>MySQL Workbench version 8.0.19</li>
-            <li>Microsoft VS Code version 1.50.1</li>
-            <li>Microsoft Excel for Mac version 16.42</li>
+        <li>Mac OSx Catalina version 10.15.7</li>
+        <li>R (for Mac) version 4.0.2 (2020-06-22) "Taking Off Again"</li>
+        <li>RStudio version 1.3.1073</li>
+        <li>MySQL Community Server version 8.0.19</li>
+        <li>MySQL Workbench version 8.0.19</li>
+        <li>Microsoft VS Code version 1.50.1</li>
+        <li>Microsoft Excel for Mac version 16.42</li>
 </details>
 
 ## R Packages Utilized
 
-
+<details>
+    <summary>Package list</summary>
+        <li>tidyverse version 1.3.0</li>
+        <li>kableExtra version 1.2.1</li>
+        <li>RMySQL version 0.10.20</li>
+        <li>plotly version 4.9.2.1</li>
+        <li>DT version 0.15</li>
+</details>
 
 ***
 
 ## References
 
-REFERENCE NOTES:
-* References are, mostly, listed in the order that I used them.
-* Website links are provided for those references I either had bookmarked previously or accessed during this project.
-* I hope that some or all of these references are helpful when working on your own project.
+<details>
+    <summary>Reference notes</summary>
+        <li>References are, mostly, listed in the order that I used them.</li>
+        <li>Website links are provided for those references I either had bookmarked previously or accessed during this project.</li>
+        <li>I hope that some or all of these references are helpful when working on your own project.</li>
+</details>
 
-<br>
 
-1. Hair Salon No-Show Dataset from Kaggle at https://www.kaggle.com/frederickferguson/hair-salon-no-show-data-set.
-
-2. *Using flexdashboard*, https://rmarkdown.rstudio.com/flexdashboard/using.html.
-
-3. *Create Awesome HTML Table with knitr::kable and kableExtra*, by Hao Zhu, https://haozhu233.github.io/kableExtra/awesome_table_in_html.html#getting_started.
-
-4. *Deploying flexdashboard on GitHub Pages*, by Rami Krispin, dated Sep 4, 2020 at https://ramikrispin.github.io/2020/09/deploying-flexdashboard-on-github-pages/. Provided concise steps to follow to enable repository to host an .html file on GitHub Pages.
-
-5. *RMarkdown directing output file into a directory*, NicE's answer, dated Mar 9, 2015 at https://stackoverflow.com/questions/28894515/rmarkdown-directing-output-file-into-a-directory. Provided necessary code used to knit document/file to a different directory.
-
-6. *R for Data Science* by Hadley Wickham & Garrett Grolemund.
-
-7. *Converting 'False'(string) to False(boolean) During LOAD DATA LOCAL INFILE*, Nawaz Sohail's answer, dated Oct 21, 2014 at https://dba.stackexchange.com/questions/80727/converting-falsestring-to-falseboolean-during-load-data-local-infile. Using IF() statement in MySQL to convert character string to boolean value during data upload.
-
-8. *Importing a CSV to MySQL with different date format*, Devart's answer, dated Nov 17, 2011 at https://stackoverflow.com/questions/8163079/importing-a-csv-to-mysql-with-different-date-format. Using STR_TO_DATE() statement to convert character date to DATE data type in MySQL during data upload.
-
-9. *MySQL - Multiple set on LOAD DATA INFILE*, ravnur's answer, dated Sep 21, 2012 at https://stackoverflow.com/questions/12530971/mysql-multiple-set-on-load-data-infile. Provided format for multiple SET() statements during data upload in MySQL.
-
-10. *MySQL DATEDIFF() Function*, https://www.w3schools.com/Sql/func_mysql_datediff.asp. Using DATEDIFF() function as a better way to subtract two dates during data upload instead of using minus(-) in an equation.
-
-11. *How to do time_to_minute in Mysql?*, Jon's answer, dated Oct 27, 2011 at https://stackoverflow.com/questions/7918923/how-to-do-time-to-minute-in-mysql. Using TIME_TO_SEC() function in MySQL to get the time in minutes.
-
-12. *Adding new column after a specific column and defining a default in MySQL?*, https://www.tutorialspoint.com/adding-new-column-after-a-specific-column-and-defining-a-default-in-mysql. For adding columns to a table after a specific column.
-
-13. *mysql update column with value from another table*, John Woo's answer, dated Jul 29, 2012 at https://stackoverflow.com/questions/11709043/mysql-update-column-with-value-from-another-table. For using joins to update a column in a table with values from another table.
-
-14. *MySQL error code: 1175 during UPDATE in MySQL Workbench*, Rudy De Volder's answer, dated Feb 4, 2015 at https://stackoverflow.com/questions/11448068/mysql-error-code-1175-during-update-in-mysql-workbench. For using a WHERE in an UPDATE statement to avoid triggering the 1175 error when sql_safe_updates mode is enabled on MySQL 8.0 (default).
-
-15. *MySQL Crash Course* by Ben Forta.
-
-16. *mysql query not recognizing string*, spencer7593's answer, dated Mar 11, 2016 at https://stackoverflow.com/questions/35951305/mysql-query-not-recognizing-string. For using HEX() to determine if string values in column included carriage return character (i.e., \r) and to fix issue in `LINES TERMINATED BY` portion of `LOAD DATA LOCAL INFILE` statement.
-
-17. *Securing Credentials*, https://db.rstudio.com/best-practices/managing-credentials/. Good info about using the keyring package to secure connection credentials.
-
-18. FontAwesome website, https://fontawesome.com/v4.7.0/icons/. For icon codes used in value boxes on dashboards.
-
-19. GitHub post - 256 COLORS - CHEAT SHEET, https://jonasjacek.github.io/colors/, by Jonas Jacek. Referenced for hexidecimal color codes used in value boxes on dashboards.
-
-20. *Order discrete x scale by frequency/value*, Axeman and Yuriy Petrovskiy's answer, dated Jul 13, 2018 and Sep 11, 2018 at https://stackoverflow.com/questions/3253641/order-discrete-x-scale-by-frequency-value. For reordering DOW on barplot.
-
-21. *Joining three tables using MySQL*, PHP Ferrari's answer, dated Sep 21, 2010 at https://stackoverflow.com/questions/3709560/joining-three-tables-using-mysql. For using normalize form structure for joining three tables in one query without having to use subqueries.
-
-22. *Vignette: Downloadable tables in RMarkdown with the DT package*, https://www.r-bloggers.com/2019/12/vignette-downloadable-tables-in-rmarkdown-with-the-dt-package/. For creating filterable/searchable tables.
-
-23. *Data Table Options*, https://rstudio.github.io/DT/options.html. For creating filterable/searchable tables.
-
-24. *Column alignment in DT datatable*, zx8754 and G. Cocca's answer, dated Sep 17, 2020 and Mar 2, 2016 at https://stackoverflow.com/questions/35749389/column-alignment-in-dt-datatable. For centering columns when using DT::datatable() in R.
-
-25. https://shields.io. Used for badges.
+<details>
+    <summary>Reference list</summary>
+        <ol>
+            <li>Hair Salon No-Show Dataset from Kaggle at https://www.kaggle.com/frederickferguson/hair-salon-no-show-data-set.</li>
+            <li>*Using flexdashboard*, https://rmarkdown.rstudio.com/flexdashboard/using.html.</li>
+            <li>*Create Awesome HTML Table with knitr::kable and kableExtra*, by Hao Zhu, https://haozhu233.github.io/kableExtra/awesome_table_in_html.html#getting_started.</li>
+            <li>*Deploying flexdashboard on GitHub Pages*, by Rami Krispin, dated Sep 4, 2020 at https://ramikrispin.github.io/2020/09/deploying-flexdashboard-on-github-pages/. Provided concise steps to follow to enable repository to host an .html file on GitHub Pages.</li>
+            <li>*RMarkdown directing output file into a directory*, NicE's answer, dated Mar 9, 2015 at https://stackoverflow.com/questions/28894515/rmarkdown-directing-output-file-into-a-directory. Provided necessary code used to knit document/file to a different directory.</li>
+            <li>*R for Data Science* by Hadley Wickham & Garrett Grolemund.</li>
+            <li>*Converting 'False'(string) to False(boolean) During LOAD DATA LOCAL INFILE*, Nawaz Sohail's answer, dated Oct 21, 2014 at https://dba.stackexchange.com/questions/80727/converting-falsestring-to-falseboolean-during-load-data-local-infile. Using IF() statement in MySQL to convert character string to boolean value during data upload.</li>
+            <li>*Importing a CSV to MySQL with different date format*, Devart's answer, dated Nov 17, 2011 at https://stackoverflow.com/questions/8163079/importing-a-csv-to-mysql-with-different-date-format. Using STR_TO_DATE() statement to convert character date to DATE data type in MySQL during data upload.</li>
+            <li>*MySQL - Multiple set on LOAD DATA INFILE*, ravnur's answer, dated Sep 21, 2012 at https://stackoverflow.com/questions/12530971/mysql-multiple-set-on-load-data-infile. Provided format for multiple SET() statements during data upload in MySQL.</li>
+            <li>*MySQL DATEDIFF() Function*, https://www.w3schools.com/Sql/func_mysql_datediff.asp. Using DATEDIFF() function as a better way to subtract two dates during data upload instead of using minus(-) in an equation.</li>
+            <li>*How to do time_to_minute in Mysql?*, Jon's answer, dated Oct 27, 2011 at https://stackoverflow.com/questions/7918923/how-to-do-time-to-minute-in-mysql. Using TIME_TO_SEC() function in MySQL to get the time in minutes.</li>
+            <li>*Adding new column after a specific column and defining a default in MySQL?*, https://www.tutorialspoint.com/adding-new-column-after-a-specific-column-and-defining-a-default-in-mysql. For adding columns to a table after a specific column.</li>
+            <li>*mysql update column with value from another table*, John Woo's answer, dated Jul 29, 2012 at https://stackoverflow.com/questions/11709043/mysql-update-column-with-value-from-another-table. For using joins to update a column in a table with values from another table.</li>
+            <li>*MySQL error code: 1175 during UPDATE in MySQL Workbench*, Rudy De Volder's answer, dated Feb 4, 2015 at https://stackoverflow.com/questions/11448068/mysql-error-code-1175-during-update-in-mysql-workbench. For using a WHERE in an UPDATE statement to avoid triggering the 1175 error when sql_safe_updates mode is enabled on MySQL 8.0 (default).</li>
+            <li>*MySQL Crash Course* by Ben Forta.</li>
+            <li>*mysql query not recognizing string*, spencer7593's answer, dated Mar 11, 2016 at https://stackoverflow.com/questions/35951305/mysql-query-not-recognizing-string. For using HEX() to determine if string values in column included carriage return character (i.e., \r) and to fix issue in `LINES TERMINATED BY` portion of `LOAD DATA LOCAL INFILE` statement.</li>
+            <li>*Securing Credentials*, https://db.rstudio.com/best-practices/managing-credentials/. Good info about using the keyring package to secure connection credentials.</li>
+            <li>FontAwesome website, https://fontawesome.com/v4.7.0/icons/. For icon codes used in value boxes on dashboards.</li>
+            <li>GitHub post - 256 COLORS - CHEAT SHEET, https://jonasjacek.github.io/colors/, by Jonas Jacek. Referenced for hexidecimal color codes used in value boxes on dashboards.</li>
+            <li>*Order discrete x scale by frequency/value*, Axeman and Yuriy Petrovskiy's answer, dated Jul 13, 2018 and Sep 11, 2018 at https://stackoverflow.com/questions/3253641/order-discrete-x-scale-by-frequency-value. For reordering DOW on barplot.</li>
+            <li>*Joining three tables using MySQL*, PHP Ferrari's answer, dated Sep 21, 2010 at https://stackoverflow.com/questions/3709560/joining-three-tables-using-mysql. For using normalize form structure for joining three tables in one query without having to use subqueries.</li>
+            <li>*Vignette: Downloadable tables in RMarkdown with the DT package*, https://www.r-bloggers.com/2019/12/vignette-downloadable-tables-in-rmarkdown-with-the-dt-package/. For creating filterable/searchable tables.</li>
+            <li>*Data Table Options*, https://rstudio.github.io/DT/options.html. For creating filterable/searchable tables.</li>
+            <li>*Column alignment in DT datatable*, zx8754 and G. Cocca's answer, dated Sep 17, 2020 and Mar 2, 2016 at https://stackoverflow.com/questions/35749389/column-alignment-in-dt-datatable. For centering columns when using DT::datatable() in R.</li>
+            <li>https://shields.io. Used for badges.</li>
+        </ol>
+</details>
