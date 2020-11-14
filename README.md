@@ -66,8 +66,7 @@ This project explores insights about hair salon appointments.
 ## Software Utilized
 
 <details>
-    <summary> Software list
-        <ol>
+    <summary>Software list</summary>
             <li>Mac OSx Catalina version 10.15.7</li>
             <li>R (for Mac) version 4.0.2 (2020-06-22) "Taking Off Again"</li>
             <li>RStudio version 1.3.1073</li>
@@ -75,8 +74,6 @@ This project explores insights about hair salon appointments.
             <li>MySQL Workbench version 8.0.19</li>
             <li>Microsoft VS Code version 1.50.1</li>
             <li>Microsoft Excel for Mac version 16.42</li>
-        </ol>
-    </summary>
 </details>
 
 ## R Packages Utilized
