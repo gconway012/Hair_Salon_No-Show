@@ -5,15 +5,21 @@
 
 ## Project Status
 
-![](https://img.shields.io/badge/Project--Status-45%25-yellow)
+![](https://img.shields.io/badge/Project--Status-50%25-yellow)
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/gconway012/Hair_Salon_No-Show)
+
+Current focus area(s):
+* EDA, feature engineering, determine modeling goal(s) & method(s).
+* Determine if I want to use R or Python for remaining analysis.
 
 ***
 
 ## Project Output Link(s)
 
-**\*Pending\***
+![](https://img.shields.io/badge/Last%20Updated-Nov%2015%2C%202020-blue)
+
+[Project Output](https://gconway012.github.io/Hair_Salon_No-Show/)
 
 ## Project Description
 
@@ -46,7 +52,7 @@ This project explores insights about hair salon appointments.
 
 ## Notes
 
-* This output/website (link above) is best viewed with a large/maximized window. A larger monitor/screen (24" or larger) may be required.
+* The output/website (link above) is best viewed with a large/maximized window. A larger monitor/screen (24" or larger) may be required.
 
 ***
 
