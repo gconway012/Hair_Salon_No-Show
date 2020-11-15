@@ -33,62 +33,77 @@ Welcome
 Row
 -----------------------------------------------------------------------
 
-### Project Status
+### <b>Project Status</b>
 
-***In-progress***
+![](https://img.shields.io/badge/Project--Status-50%25-yellow)
+![](https://img.shields.io/badge/Last%20Updated-Nov%2015%2C%202020-blue)
 
-### Project Description
+Current focus area(s):
 
-This project explores insights about no-show appointments at a hair salon.
+* EDA, feature engineering, determine modeling goal(s) & method(s).
+* Determine if I want to use R or Python for remaining analysis.
+
+
+### <b>Project Description</b>
+
+This project explores insights about hair salon appointments.
+
+Row{data-height=250}
+-----------------------------------------------------------------------
+
+### <b>Notes</b>
+
+* **Source code** for this project can be found on my GitHub repo at [Hair_Salon_No_Show](https://github.com/gconway012/Hair_Salon_No-Show) in the *index.Rmd* file. 
+
+* This website is best viewed with a large/maximized window. A larger monitor/screen (24" or larger) may be required.  
+
+### <b>Project Scenario</b>
+
+* A small hair salon wants to understand its business and related data to better serve their clients.  
+* Although they use a POS system, the owner/manager would like to look deeper than the receipts.  
+* The salon manager and select staff members indicated that they typically use Excel to generate reports and/or review data. However, they feel that using Excel is becoming obsolete for their needs.  
+* As an exploratory step before developing a longer-term strategy for their data and analytics needs, the business would like to see an example(s) of:  
+    + A better data management tool/platform.  
+    + Another type of dashboarding and/or reporting tool/platform.  
+    + Insights to be gained from those dashboards/reports.  
+    + Different analysis techniques employed and what insights those methods can provide.  
 
 Row
 -----------------------------------------------------------------------
 
-### Notes
+### <b>Software, Packages, Extensions & Languages</b>
 
-* **Source code** for this project can be found on my GitHub repo at [Hair_Salon_No_Show](https://github.com/gconway012/Hair_Salon_No-Show) in the *index.Rmd* file. 
+|Software Used|Packages Used|(Helpful) VS Code Extensions|Coding Languages Used|
+|:---|:---|:---|:---|
+|Mac OSx Catalina|tidyverse|Ascii Tree Generator|R|
+|R|kableExtra|Bracket Pair Colorizer 2|MySQL|
+|RStudio|RMySQL|vscode-icons|HTML|
+|MySQL Community Server|plotly|||
+|MySQL Workbench|DT|||
+|Microsoft VS Code||||
+|Microsoft Excel||||
 
-* Small, or reduced, window sizes may cause the top tabs to move to a second line in the header row. This collapses the page contents in a manner that hides various window/section headers, drop-down options, etc. If this occurs,expand or maximize the window to properly view contents. A larger monitor/screen (24" or larger) may be required.
+<br>
 
-### Project Goals
+\*Refer to [README.md](https://github.com/gconway012/Hair_Salon_No-Show) for the list of each software, package, and extension version used for this project.
+
+### <b>Non-Scenario Project Goals</b>
 
 * Use R/RStudio & MySQL, separately and as integrated tools, to perform analysis.
 * Set up a database schema as a simulated business requirement, which includes:
     + Raw data exploration
     + Database table design and relationship identification
     + Raw data extraction and upload into MySQL
-* Use flexdashboards in RStudio/RMarkdown as a workflow framework.
+* Use flexdashboards in RStudio/RMarkdown as a workflow framework
 * Develop dashboard page(s) 
+* Use HTML tags and other packages to experiement with RMarkdown HTML output file and Markdown document design features
 * Practice other modeling techniques
-
-Row
------------------------------------------------------------------------
-
-### Software Utilized
-
-* Mac OSx Catalina 
-* R 
-* RStudio 
-* MySQL Community Server 
-* MySQL Workbench 
-* Microsoft VS Code 
-* Microsoft Excel 
-
-<br>
-
-Refer to *README.md* for the list of each software version used for this project.
-
-
-### Analysis Goals
-
-***TBD***
-
 
 
 About {data-navmenu="Pre-DB Explore"}
 ===============================================================================
 
-### About Pre-DB Exploration
+### <b>About Pre-DB Exploration</b>
 
 * The information contained on each page under the **Pre-DB Explore** tab was used to gather information used for a MySQL database design and corresponding table creation.
 
@@ -110,11 +125,11 @@ cc <- read_csv(datafilepaths[1])
 Row
 -------------------------------------------------------------------------------
 
-### data file
+### <b>data file</b>
 
 **Client Cancellations**
 
-### data dimensions
+### <b>data dimensions</b>
 ```{r cc_dim}
 t(as.data.frame(dim(cc), row.names = c("nrow", "ncol"))) %>%
   magrittr::set_rownames(value = "") %>%
@@ -126,7 +141,7 @@ t(as.data.frame(dim(cc), row.names = c("nrow", "ncol"))) %>%
 Row
 -------------------------------------------------------------------------------
 
-### column classes/data types 
+### <b>column classes/data types</b>
 ```{r cc_col_classes}
 as.data.frame(sapply(cc, class), stringsAsFactors = F) %>%
                 rownames_to_column() %>%
@@ -139,7 +154,7 @@ as.data.frame(sapply(cc, class), stringsAsFactors = F) %>%
 ```
 
 
-### data sample
+### <b>data sample</b>
 ```{r cc_head}
 head(cc, 5) %>%
                 kable(format = "html", escape = F) %>%
@@ -150,7 +165,7 @@ head(cc, 5) %>%
 Row
 -------------------------------------------------------------------------------
 
-### max column width (in characters) 
+### <b>max column width (in characters)</b>
 ```{r cc_max_col_width}
 as.data.frame(sapply(cc, function(x){max(nchar(x, keepNA = F))})) %>%
                 rownames_to_column() %>%
@@ -162,7 +177,7 @@ as.data.frame(sapply(cc, function(x){max(nchar(x, keepNA = F))})) %>%
                               position = "left")
 ```
 
-### missing/null values index number
+### <b>missing/null values index number</b>
 ```{r cc_missing}
 as.data.frame(t(sapply(cc, function(x){which(is.na(x))}))) %>%
                 kable(format = "html", escape = F) %>%
@@ -176,7 +191,7 @@ as.data.frame(t(sapply(cc, function(x){which(is.na(x))}))) %>%
 Row
 -------------------------------------------------------------------------------
 
-### unique Code values {data-width=300}
+### <b>unique Code values</b> {data-width=300}
 ```{r cc_unique_Code}
 matrix(lapply(cc,
               function(x){sort(unique(x),
@@ -187,7 +202,7 @@ matrix(lapply(cc,
                 position = "left")
 ```
 
-### unique Service values {data-width=300}
+### <b>unique Service values</b> {data-width=300}
 ```{r cc_unique_Service}
 matrix(c(unlist(lapply(cc,
                        function(x){sort(unique(x), decreasing = F,
@@ -199,7 +214,7 @@ matrix(c(unlist(lapply(cc,
 ```
 
 
-### unique Staff values {data-width=200}
+### <b>unique Staff values</b> {data-width=200}
 ```{r cc_unique_Staff}
 matrix(unlist(lapply(cc,
                      function(x){sort(unique(x), decreasing = F,
@@ -210,7 +225,7 @@ matrix(unlist(lapply(cc,
                 position = "left")
 ```
 
-### unique Cancelled By values {data-width=200}
+### <b>unique Cancelled By values</b> {data-width=200}
 ```{r cc_unique_CanceledBy}
 matrix(c(unlist(lapply(cc,
                        function(x){sort(unique(x), decreasing = F,
@@ -243,11 +258,11 @@ fb <- read_csv(datafilepaths[2],
 Row
 -------------------------------------------------------------------------------
 
-### data file
+### <b>data file</b>
 
 **Future Bookings**
 
-### data dimensions
+### <b>data dimensions</b>
 ```{r fb_dim}
 t(as.data.frame(dim(fb), row.names = c("nrow", "ncol"))) %>%
   magrittr::set_rownames(value = "") %>%
@@ -259,7 +274,7 @@ t(as.data.frame(dim(fb), row.names = c("nrow", "ncol"))) %>%
 Row
 -------------------------------------------------------------------------------
 
-### column classes/data types
+### <b>column classes/data types</b>
 ```{r fb_col_classes}
 as.data.frame(sapply(fb, class), stringsAsFactors = F) %>%
     rownames_to_column() %>%
@@ -272,7 +287,7 @@ as.data.frame(sapply(fb, class), stringsAsFactors = F) %>%
 ```
 
 
-### data sample
+### <b>data sample</b>
 ```{r fb_head}
 head(fb, 5) %>%
     kable(format = "html", escape = F) %>%
@@ -283,7 +298,7 @@ head(fb, 5) %>%
 Row
 -------------------------------------------------------------------------------
 
-### max column width (in characters)
+### <b>max column width (in characters)</b>
 ```{r fb_max_col_width}
 as.data.frame(sapply(fb, function(x){max(nchar(x, keepNA = F))})) %>%
     rownames_to_column() %>%
@@ -295,7 +310,7 @@ as.data.frame(sapply(fb, function(x){max(nchar(x, keepNA = F))})) %>%
                   position = "left")
 ```
 
-### missing/null values index number
+### <b>missing/null values index number</b>
 ```{r fb_missing, fig.height=8.5}
 as.data.frame(t(sapply(fb, function(x){which(is.na(x))}))) %>%
                 kable(format = "html", escape = F) %>%
@@ -306,7 +321,7 @@ as.data.frame(t(sapply(fb, function(x){which(is.na(x))}))) %>%
 Row
 -------------------------------------------------------------------------------
 
-### unique Staff values
+### <b>unique Staff values</b>
 ```{r fb_unique_staff, fig.height=2}
 t(matrix(lapply(fb, function(x){sort(unique(x), 
                                      decreasing = F, 
@@ -317,7 +332,7 @@ t(matrix(lapply(fb, function(x){sort(unique(x),
                               position = "left")
 ```
 
-### unique Service values
+### <b>unique Service values</b>
 ```{r unique_Service_fb, fig.height=2}
 matrix(c(unlist(lapply(fb, function(x){sort(unique(x), 
                                      decreasing = F, 
@@ -331,7 +346,7 @@ matrix(c(unlist(lapply(fb, function(x){sort(unique(x),
 Row
 -------------------------------------------------------------------------------
 
-### unique Code values
+### <b>unique Code values</b>
 ```{r fb_unique_Code}
 matrix(c(unlist(lapply(fb, function(x){sort(unique(x), 
                                      decreasing = F, 
@@ -358,11 +373,11 @@ ns <- read_csv(datafilepaths[3])
 Row
 -------------------------------------------------------------------------------
 
-### data file
+### <b>data file</b>
 
 **No_Show Report**
 
-### data dimensions
+### <b>data dimensions</b>
 ```{r ns_dim}
 t(as.data.frame(dim(ns), row.names = c("nrow", "ncol"))) %>%
   magrittr::set_rownames(value = "") %>%
@@ -374,7 +389,7 @@ t(as.data.frame(dim(ns), row.names = c("nrow", "ncol"))) %>%
 Row
 -------------------------------------------------------------------------------
 
-### column classes/data types
+### <b>column classes/data types</b>
 ```{r ns_col_classes}
 as.data.frame(sapply(ns, class), stringsAsFactors = F) %>%
     rownames_to_column() %>%
@@ -386,7 +401,7 @@ as.data.frame(sapply(ns, class), stringsAsFactors = F) %>%
                   position = "left")
 ```
 
-### data sample
+### <b>data sample</b>
 ```{r ns_head}
 head(ns, 5) %>%
     kable(format = "html", escape = F) %>%
@@ -397,7 +412,7 @@ head(ns, 5) %>%
 Row
 -------------------------------------------------------------------------------
 
-### max column width (in characters)
+### <b>max column width (in characters)</b>
 ```{r ns_max_col_width}
 as.data.frame(sapply(ns, function(x){max(nchar(x, keepNA = F))})) %>%
     rownames_to_column() %>%
@@ -409,7 +424,7 @@ as.data.frame(sapply(ns, function(x){max(nchar(x, keepNA = F))})) %>%
                   position = "left")
 ```
 
-### missing/null values index number
+### <b>missing/null values index number</b>
 ```{r ns_missing}
 as.data.frame(t(sapply(ns, function(x){which(is.na(x))}))) %>%
                 kable(format = "html", escape = F) %>%
@@ -420,7 +435,7 @@ as.data.frame(t(sapply(ns, function(x){which(is.na(x))}))) %>%
 Row
 -------------------------------------------------------------------------------
 
-### unique Code values
+### <b>unique Code values</b>
 ```{r unique_Code_ns}
 matrix(unlist(lapply(ns, function(x){sort(unique(x), 
                                      decreasing = F, 
@@ -431,7 +446,7 @@ matrix(unlist(lapply(ns, function(x){sort(unique(x),
                 position = "left")
 ```
 
-### unique Service values
+### <b>unique Service values</b>
 ```{r unique_Description_ns}
 matrix(c(unlist(lapply(ns, 
                        function(x){sort(unique(x), 
@@ -443,7 +458,7 @@ matrix(c(unlist(lapply(ns,
                 position = "left")
 ```
 
-### unique Staff values
+### <b>unique Staff values</b>
 ```{r unique_Category_ns}
 matrix(unlist(lapply(ns, 
                      function(x){sort(unique(x), decreasing = F, 
@@ -468,11 +483,11 @@ plr <- read_csv(datafilepaths[4])
 Row
 -------------------------------------------------------------------------------
 
-### data file
+### <b>data file</b>
 
 **Product Listing-Retail**
 
-### data dimensions
+### <b>data dimensions</b>
 ```{r plr_dim}
 t(as.data.frame(dim(plr), row.names = c("nrow", "ncol"))) %>%
   magrittr::set_rownames(value = "") %>%
@@ -484,7 +499,7 @@ t(as.data.frame(dim(plr), row.names = c("nrow", "ncol"))) %>%
 Row
 -------------------------------------------------------------------------------
 
-### column classes/data types {data-width=150}
+### <b>column classes/data types</b> {data-width=150}
 ```{r plr_col_classes}
 as.data.frame(sapply(plr, class), stringsAsFactors = F) %>%
     rownames_to_column() %>%
@@ -496,7 +511,7 @@ as.data.frame(sapply(plr, class), stringsAsFactors = F) %>%
                   position = "left")
 ```
 
-### data sample
+### <b>data sample</b>
 ```{r plr_head}
 head(plr, 5) %>%
     kable(format = "html", escape = F) %>%
@@ -507,7 +522,7 @@ head(plr, 5) %>%
 Row
 -------------------------------------------------------------------------------
 
-### max column width (in characters) {data-width=150}
+### <b>max column width (in characters)</b> {data-width=150}
 ```{r plr_max_col_width}
 as.data.frame(sapply(plr, function(x){max(nchar(x, keepNA = F))})) %>%
     rownames_to_column() %>%
@@ -519,7 +534,7 @@ as.data.frame(sapply(plr, function(x){max(nchar(x, keepNA = F))})) %>%
                   position = "left")
 ```
 
-### missing/null values index number
+### <b>missing/null values index number</b>
 ```{r plr_missing}
 # get info
 missinglist <- sapply(plr, function(x){which(is.na(x))})
@@ -568,7 +583,7 @@ rm(missinglist, tempdf)
 Row
 -------------------------------------------------------------------------------
 
-### unique Supplier values {data-width=200}
+### <b>unique Supplier values</b> {data-width=200}
 ```{r unique_Supplier_plr}
 matrix(lapply(plr, 
               function(x){sort(unique(x), 
@@ -578,7 +593,7 @@ matrix(lapply(plr,
                   position = "left")
 ```
 
-### unique Brand values {data-width=300}
+### <b>unique Brand values</b> {data-width=300}
 ```{r unique_Brand_plr, fig.height=2}
 matrix(c(lapply(plr, 
                  function(x){sort(unique(x), decreasing = F, 
@@ -590,7 +605,7 @@ matrix(c(lapply(plr,
                   position = "left")
 ```
 
-### unique Category values {data-width=200}
+### <b>unique Category values</b> {data-width=200}
 ```{r unique_Category_plr, fig.height=2}
 matrix(sapply(plr, 
               function(x){sort(unique(x), decreasing = F, 
@@ -603,7 +618,7 @@ matrix(sapply(plr,
 Row
 -------------------------------------------------------------------------------
 
-### unique Code values
+### <b>unique Code values</b>
 ```{r unique_Code_plr, fig.height=4.5}
 matrix(c(unlist(lapply(plr, function(x){sort(unique(x), decreasing = F, na.last = T)})[[2]]),
          rep("-place_holder-", times = 9)), 
@@ -616,7 +631,7 @@ matrix(c(unlist(lapply(plr, function(x){sort(unique(x), decreasing = F, na.last 
 Row
 -------------------------------------------------------------------------------
 
-### unique Description values
+### <b>unique Description values</b>
 ```{r unique_Description_plr}
 matrix(c(unlist(lapply(plr, 
                        function(x){sort(unique(x), decreasing = F, 
@@ -643,11 +658,11 @@ rt <- read_csv(datafilepaths[5])
 Row
 -------------------------------------------------------------------------------
 
-### data file
+### <b>data file</b>
 
 **Receipt Transactions**
 
-### data dimensions
+### <b>data dimensions</b>
 ```{r rt_dim, fig.height=2}
 t(as.data.frame(dim(rt), row.names = c("nrow", "ncol"))) %>%
   magrittr::set_rownames(value = "") %>%
@@ -659,7 +674,7 @@ t(as.data.frame(dim(rt), row.names = c("nrow", "ncol"))) %>%
 Row
 -------------------------------------------------------------------------------
 
-### column classes/data types {data-width=350}
+### <b>column classes/data types</b> {data-width=350}
 ```{r rt_col_classes}
 as.data.frame(sapply(rt, class), stringsAsFactors = F) %>%
     rownames_to_column() %>%
@@ -671,7 +686,7 @@ as.data.frame(sapply(rt, class), stringsAsFactors = F) %>%
                   position = "left")
 ```
 
-### data sample
+### <b>data sample</b>
 ```{r rt_head}
 head(rt, 5) %>%
     kable(format = "html", escape = F) %>%
@@ -683,7 +698,7 @@ head(rt, 5) %>%
 Row
 -------------------------------------------------------------------------------
 
-### max column width (in characters) {data-width=200}
+### <b>max column width (in characters)</b> {data-width=200}
 ```{r rt_max_col_width}
 as.data.frame(sapply(rt, function(x){max(nchar(x, keepNA = F))})) %>%
     rownames_to_column() %>%
@@ -695,7 +710,7 @@ as.data.frame(sapply(rt, function(x){max(nchar(x, keepNA = F))})) %>%
                   position = "left")
 ```
 
-### missing/null values index number {data-width=500}
+### <b>missing/null values index number</b> {data-width=500}
 ```{r rt_missing}
 # get info
 missinglist <- sapply(rt, function(x){which(is.na(x))})
@@ -736,7 +751,7 @@ tempdf %>%
 rm(missinglist, tempdf)
 ```
 
-### unique Staff values {data-width=300}
+### <b>unique Staff values</b> {data-width=300}
 ```{r rt_unique_Staff}
 matrix(c(lapply(rt, 
          function(x){sort(unique(x), 
@@ -751,7 +766,7 @@ matrix(c(lapply(rt,
 
 Column
 -------------------------------------------------------------------------------
-### unique Client values
+### <b>unique Client values</b>
 ```{r rt_unique_Code}
 matrix(lapply(rt, 
               function(x){sort(unique(x), 
@@ -778,11 +793,11 @@ sl <- read_csv(datafilepaths[6])
 Row
 -------------------------------------------------------------------------------
 
-### data file
+### <b>data file</b>
 
 **Service Listing**
 
-### data dimensions
+### <b>data dimensions</b>
 ```{r sl_dim}
 t(as.data.frame(dim(sl), row.names = c("nrow", "ncol"))) %>%
   magrittr::set_rownames(value = "") %>%
@@ -794,7 +809,7 @@ t(as.data.frame(dim(sl), row.names = c("nrow", "ncol"))) %>%
 Row
 -------------------------------------------------------------------------------
 
-### column classes/data types
+### <b>column classes/data types</b>
 ```{r sl_col_classes}
 as.data.frame(sapply(sl, class), stringsAsFactors = F) %>%
     rownames_to_column() %>%
@@ -806,7 +821,7 @@ as.data.frame(sapply(sl, class), stringsAsFactors = F) %>%
                   position = "left")
 ```
 
-### data sample
+### <b>data sample</b>
 ```{r sl_head}
 head(sl, 5) %>%
     kable(format = "html", escape = F) %>%
@@ -817,7 +832,7 @@ head(sl, 5) %>%
 Row
 -------------------------------------------------------------------------------
 
-### max column width (in characters)
+### <b>max column width (in characters)</b>
 ```{r sl_max_col_width}
 as.data.frame(sapply(sl, function(x){max(nchar(x, keepNA = F))})) %>%
     rownames_to_column() %>%
@@ -829,7 +844,7 @@ as.data.frame(sapply(sl, function(x){max(nchar(x, keepNA = F))})) %>%
                   position = "left")
 ```
 
-### missing/null values index number
+### <b>missing/null values index number</b>
 ```{r sl_missing}
 as.data.frame(t(sapply(sl, function(x){which(is.na(x))}))) %>%
                 kable(format = "html", escape = F) %>%
@@ -837,7 +852,7 @@ as.data.frame(t(sapply(sl, function(x){which(is.na(x))}))) %>%
                               position = "left")
 ```
 
-### unique Category values
+### <b>unique Category values</b>
 ```{r unique_Category_sl}
 matrix(unlist(sapply(sl, 
                      function(x){sort(unique(x), 
@@ -850,7 +865,7 @@ matrix(unlist(sapply(sl,
 
 Row
 -------------------------------------------------------------------------------
-### unique Code values
+### <b>unique Code values</b>
 ```{r sl_unique_Code}
 matrix(unlist(lapply(sl, 
                      function(x){sort(unique(x), 
@@ -865,7 +880,7 @@ matrix(unlist(lapply(sl,
 Row
 -------------------------------------------------------------------------------
 
-### unique Description values
+### <b>unique Description values</b>
 ```{r sl_unique_Description}
 matrix(unlist(lapply(sl, 
                      function(x){sort(unique(x), 
@@ -885,7 +900,7 @@ rm(sl)
 Starting Data Tables/Files {data-navmenu="DB Creation"}
 ===============================================================================
 
-### Raw Data Table Names and Columns
+### <b>Raw Data Table Names and Columns</b>
 
 ```{r pull_name_and_cols}
 # initialize empty vector and list
@@ -950,6 +965,7 @@ Row
 Data Dictionary Notes{data-navmenu="DB Creation"}
 ===============================================================================
 
+### <b>Notes/observations about the data</b>
 * Column headings were renamed in MySQL tables for clarity.
 
 * While reviewing table data during database construction, certain column calculations were identified. The select calculations identified are as follows:
@@ -976,7 +992,7 @@ source("R_scripts/sales_queries.R")
 Row
 -------------------------------------------------------------------------------
 
-### Date Range (Receipt Transactions)
+### <b>Date Range (Receipt Transactions)</b>
 
 ```{r receipts_date_range}
 sales_query("date_range_receipts") %>%
@@ -986,7 +1002,7 @@ sales_query("date_range_receipts") %>%
 ```
 
 
-### Total Sales
+### <b>Total Sales</b>
 
 ```{r total_sales}
 flexdashboard::valueBox(sales_query("total_sales"),
@@ -995,7 +1011,7 @@ flexdashboard::valueBox(sales_query("total_sales"),
 ```
 
 
-### Total Sales (Services)
+### <b>Total Sales (Services)</b>
 
 ```{r total_services_sales}
 flexdashboard::valueBox(sales_query("total_services_sales"),
@@ -1004,7 +1020,7 @@ flexdashboard::valueBox(sales_query("total_services_sales"),
 ```
 
 
-### Total Sales (Products)
+### <b>Total Sales (Products)</b>
 
 ```{r total_product_sales}
 flexdashboard::valueBox(sales_query("total_products_sales"),
@@ -1013,7 +1029,7 @@ flexdashboard::valueBox(sales_query("total_products_sales"),
 ```
 
 
-### Total Sales (MISC - Service and/or Product)
+### <b>Total Sales (MISC - Service and/or Product)</b>
 
 ```{r misc_sales}
 flexdashboard::valueBox(sales_query("misc_sales"),
@@ -1024,7 +1040,7 @@ flexdashboard::valueBox(sales_query("misc_sales"),
 Row
 -------------------------------------------------------------------------------
 
-### # Services Offered (Active)
+### <b># Services Offered (Active)</b>
 
 ```{r num_services_offered}
 flexdashboard::valueBox(sales_query("num_services_offered"),
@@ -1033,7 +1049,7 @@ flexdashboard::valueBox(sales_query("num_services_offered"),
 ```
 
 
-### # Products Offered (Active)
+### <b># Products Offered (Active)</b>
 
 ```{r num_products_offered}
 flexdashboard::valueBox(sales_query("num_products_offered"),
@@ -1044,7 +1060,7 @@ flexdashboard::valueBox(sales_query("num_products_offered"),
 Row
 -------------------------------------------------------------------------------
 
-### # Products Out-of-Stock (Active)
+### <b>Products Out-of-Stock (Active)</b>
 
 ```{r products_out_of_stock}
 sales_query("products_oos") %>%
@@ -1056,7 +1072,7 @@ sales_query("products_oos") %>%
 Row
 -------------------------------------------------------------------------------
 
-### Top 10 Services
+### <b>Top 10 Services</b>
 
 ```{r top_ten_services}
 sales_query("top_ten_services") %>%
@@ -1066,7 +1082,7 @@ sales_query("top_ten_services") %>%
 ```
 
 
-### Top 10 Products
+### <b>Top 10 Products</b>
 
 ```{r top_ten_products}
 sales_query("top_ten_products") %>%
@@ -1079,7 +1095,7 @@ sales_query("top_ten_products") %>%
 Row
 -------------------------------------------------------------------------------
 
-### Bottom 5 Services
+### <b>Bottom 5 Services</b>
 
 ```{r bottom_five_services}
 sales_query("bottom_five_services") %>%
@@ -1089,7 +1105,7 @@ sales_query("bottom_five_services") %>%
 ```
 
 
-### Bottom 5 Products
+### <b>Bottom 5 Products</b>
 
 ```{r bottom_five_products}
 sales_query("bottom_five_products") %>%
@@ -1102,7 +1118,7 @@ sales_query("bottom_five_products") %>%
 Row
 -------------------------------------------------------------------------------
 
-### Daily Sales
+### <b>Daily Sales</b>
 
 ```{r daily_sales_plot}
 sales_query("daily_sales")
@@ -1111,7 +1127,7 @@ sales_query("daily_sales")
 Row
 -------------------------------------------------------------------------------
 
-### Sales by Week
+### <b>Sales by Week</b>
 
 ```{r sales_by_week}
 sales_query("sales_by_week")
@@ -1120,7 +1136,7 @@ sales_query("sales_by_week")
 Row
 -------------------------------------------------------------------------------
 
-### Daily Sales by Day-of-the-Week (DOW)
+### <b>Daily Sales by Day-of-the-Week (DOW)</b>
 
 ```{r daily_sales_by_DOW_plot}
 sales_query("daily_sales_isolated_DOW")
@@ -1130,7 +1146,7 @@ sales_query("daily_sales_isolated_DOW")
 Row
 -------------------------------------------------------------------------------
 
-### Total Sales Aggregated by (DOW)
+### <b>Total Sales Aggregated by (DOW)</b>
 
 ```{r DOW_sales_aggregated}
 sales_query("DOW_sales_aggregated")
@@ -1147,7 +1163,7 @@ source("R_scripts/client_queries.R")
 Row
 -------------------------------------------------------------------------------
 
-### Date Range - Receipts
+### <b>Date Range - Receipts</b>
 
 ```{r receipts_date_range2}
 sales_query("date_range_receipts") %>%
@@ -1156,7 +1172,7 @@ sales_query("date_range_receipts") %>%
                   position = "left")
 ```
 
-### Date Range - Cancellations
+### <b>Date Range - Cancellations</b>
 
 ```{r cancellations_date_range}
 clients_query("date_range_cancellations") %>%
@@ -1169,7 +1185,7 @@ clients_query("date_range_cancellations") %>%
 Row
 -------------------------------------------------------------------------------
 
-### Date Range - No-Show Report
+### <b>Date Range - No-Show Report</b>
 
 ```{r noshow_date_range}
 clients_query("date_range_noshow_report") %>%
@@ -1179,7 +1195,7 @@ clients_query("date_range_noshow_report") %>%
 ```
 
 
-### Date Range - Future Bookings
+### <b>Date Range - Future Bookings</b>
 
 ```{r future_bookings_date_range}
 clients_query("date_range_future_bookings") %>%
@@ -1192,7 +1208,7 @@ clients_query("date_range_future_bookings") %>%
 Row
 -------------------------------------------------------------------------------
 
-### Total Clients (in records)
+### <b>Total Clients (in records)</b>
 
 ```{r total_clients}
 flexdashboard::valueBox(clients_query("total_clients_in_records"),
@@ -1200,7 +1216,7 @@ flexdashboard::valueBox(clients_query("total_clients_in_records"),
 ```
 
 
-### Total Walk-ins (on receipts)
+### <b>Total Walk-ins (on receipts)</b>
 
 ```{r total_walkins}
 flexdashboard::valueBox(clients_query("total_walkins_on_receipts"),
@@ -1211,7 +1227,7 @@ flexdashboard::valueBox(clients_query("total_walkins_on_receipts"),
 Row
 -------------------------------------------------------------------------------
 
-### Clients (on records, on receipts, excludes walk-ins)
+### <b>Clients (on records, on receipts, excludes walk-ins)</b>
 
 ```{r clients_on_receipts}
 flexdashboard::valueBox(clients_query("total_clients_on_receipts_excl_walkins"),
@@ -1219,7 +1235,7 @@ flexdashboard::valueBox(clients_query("total_clients_on_receipts_excl_walkins"),
 ```
 
 
-### Repeat Clients (> 1 visit, on receipts, excludes walk-ins)
+### <b>Repeat Clients (> 1 visit, on receipts, excludes walk-ins)</b>
 
 ```{r repeat_clients}
 flexdashboard::valueBox(clients_query("total_repeat_clients_on_receipts_excl_walkins"),
@@ -1227,7 +1243,7 @@ flexdashboard::valueBox(clients_query("total_repeat_clients_on_receipts_excl_wal
 ```
 
 
-### One-time Clients (on-receipts, excludes walk-ins)
+### <b>One-time Clients (on-receipts, excludes walk-ins)</b>
 
 ```{r onetime_clients}
 flexdashboard::valueBox(clients_query("total_onetime_clients_on_receipts_excl_walkins"),
@@ -1238,7 +1254,7 @@ flexdashboard::valueBox(clients_query("total_onetime_clients_on_receipts_excl_wa
 Row
 -------------------------------------------------------------------------------
 
-### 10 Most Frequent Clients (excludes walk-ins) (scrollable)
+### <b>10 Most Frequent Clients (excludes walk-ins) (scrollable)</b>
 
 ```{r frequent_clients_table}
 clients_query("most_freq_clients_excl_walkins") %>%
@@ -1260,7 +1276,7 @@ clients_query("most_freq_clients_excl_walkins") %>%
 Row
 -------------------------------------------------------------------------------
 
-### Clients w/ Most Cancellations
+### <b>Clients w/ Most Cancellations</b>
 
 ```{r most_cancellations}
 clients_query("clients_most_cancellations")
@@ -1276,7 +1292,7 @@ source("R_scripts/staff_queries.R")
 Row
 -------------------------------------------------------------------------------
 
-### Date Range - Receipts
+### <b>Date Range - Receipts</b>
 
 ```{r receipts_date_range3}
 sales_query("date_range_receipts") %>%
@@ -1288,7 +1304,7 @@ sales_query("date_range_receipts") %>%
 Row
 -------------------------------------------------------------------------------
 
-### Earnings by Staff
+### <b>Earnings by Staff</b>
 
 ```{r earnings_by_staff}
 staff_query("earnings_by_staff")
@@ -1298,7 +1314,7 @@ staff_query("earnings_by_staff")
 Row
 -------------------------------------------------------------------------------
 
-### Appointments by Staff (excludes Walk-Ins)
+### <b>Appointments by Staff (excludes Walk-Ins)</b>
 
 ```{r appointments_by_staff}
 staff_query("appointments_by_staff")
@@ -1308,7 +1324,7 @@ staff_query("appointments_by_staff")
 Row
 -------------------------------------------------------------------------------
 
-### Cancellations by Staff
+### <b>Cancellations by Staff</b>
 
 ```{r cancellations_by_staff}
 staff_query("cancellations_by_staff")
@@ -1317,7 +1333,7 @@ staff_query("cancellations_by_staff")
 Row
 -------------------------------------------------------------------------------
 
-### No-Shows by Staff
+### <b>No-Shows by Staff</b>
 
 ```{r noshows_by_staff}
 staff_query("noshows_by_staff")
@@ -1327,7 +1343,7 @@ staff_query("noshows_by_staff")
 Walk-Ins Report {data-navmenu="Reports"}
 ===============================================================================
 
-### Walk-Ins Report (scrollable)
+### <b>Walk-Ins Report (scrollable)</b>
 
 ```{r walkins_report}
 source("R_scripts/WalkIns_report.R")
@@ -1350,7 +1366,7 @@ walkins_query("walkins_report") %>%
 Cancellations Report {data-navmenu="Reports"}
 ===============================================================================
 
-### Cancellations Report (scrollable)
+### <b>Cancellations Report (scrollable)</b>
 
 ```{r cancellations_report}
 source("R_scripts/cancellation_report.R")
@@ -1373,7 +1389,7 @@ cancellations_query("cancellations_report") %>%
 No-Show Report {data-navmenu="Reports"}
 ===============================================================================
 
-### No-Show Report (scrollable)
+### <b>No-Show Report (scrollable)</b>
 
 ```{r no_show_report}
 source("R_scripts/no_show_report.R")
@@ -1396,7 +1412,7 @@ noshow_query("noshow_report") %>%
 Price Differences Report {data-navmenu="Reports"}
 ===============================================================================
 
-### Price Differences Report (scrollable)
+### <b>Price Differences Report (scrollable)</b>
 
 ```{r price_diff_report}
 source("R_scripts/price_diff_report.R")
