@@ -179,3 +179,9 @@ This project explores insights about hair salon appointments.
             <li><i>Is there a way to represent a directory tree in a Github README.md?</i>, joe sepi's answer, dated Aug 13, 2016. Use triple backticks to get ASCII tree to render properly in Markdown. 
         </ol>
 </details>
+
+***
+
+## License
+
+![GitHub](https://img.shields.io/github/license/gconway012/Hair_Salon_No-Show?color=blue&style=plastic)
