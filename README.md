@@ -184,4 +184,5 @@ This project explores insights about hair salon appointments.
 
 ## License
 
-![GitHub](https://img.shields.io/github/license/gconway012/Hair_Salon_No-Show?color=blue&style=plastic)
+[![GitHub](https://img.shields.io/github/license/gconway012/Hair_Salon_No-Show?color=blue&style=plastic)](https://github.com/gconway012/Hair_Salon_No-Show/blob/master/LICENSE)
+
