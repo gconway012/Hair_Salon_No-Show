@@ -36,7 +36,7 @@ Row
 ### <b>Project Status</b>
 
 ![](https://img.shields.io/badge/Project--Status-50%25-yellow)
-![](https://img.shields.io/badge/Last%20Updated-Nov%2015%2C%202020-blue)
+![](https://img.shields.io/badge/Last%20Updated-Nov%2018%2C%202020-blue)
 
 Current focus area(s):
 
@@ -56,6 +56,8 @@ Row{data-height=250}
 * **Source code** for this project can be found on my GitHub repo at [Hair_Salon_No_Show](https://github.com/gconway012/Hair_Salon_No-Show) in the *index.Rmd* file. 
 
 * This website is best viewed with a large/maximized window. A larger monitor/screen (24" or larger) may be required.  
+
+* Names were changed as an additional privacy consideration.
 
 ### <b>Project Scenario</b>
 
