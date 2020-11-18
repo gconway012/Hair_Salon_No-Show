@@ -1,2 +1,5 @@
 # ignore db connection credentials file
 connect_db.R
+
+# ignore name_change script
+name_change.R
