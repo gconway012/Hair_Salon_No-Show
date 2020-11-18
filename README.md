@@ -17,7 +17,7 @@ Current focus area(s):
 
 ## Project Output Link(s)
 
-![](https://img.shields.io/badge/Last%20Updated-Nov%2015%2C%202020-blue)
+![](https://img.shields.io/badge/Last%20Updated-Nov%2018%2C%202020-blue)
 
 [Project Output](https://gconway012.github.io/Hair_Salon_No-Show/)
 
@@ -54,6 +54,8 @@ This project explores insights about hair salon appointments.
 
 * The output/website (link above) is best viewed with a large/maximized window. A larger monitor/screen (24" or larger) may be required.
 
+* Names were changed as an additional privacy consideration.
+
 ***
 
 ## About this repository
@@ -63,7 +65,7 @@ This project explores insights about hair salon appointments.
 ```
 .
 ├── docs
-│   └── index.html                  ## directory & file pending        
+│   └── index.html                          
 ├── img_files
 │   └── hair_salon_noshow_erd.jpg
 ├── mysql_scripts
@@ -96,12 +98,26 @@ This project explores insights about hair salon appointments.
 
 ```
 .
-└── data_files
+├── data files
+├── connect_db.R             # for database connection
+├── staff_name_change.sql    # updates table with new names (after table created)
+└── name_change.R            # replaces names in data files with new names
 ```
 
 \*Data files - Files may be downloaded from the Kaggle.com website (see link under Reference 1 below).
 
 ***
+
+## Languages Utilized
+
+<details>
+    <summary>Languages list</summary>
+        <li>R</li>
+        <li>MySQL</li>
+        <li>HTML</li>
+</details>
+
+<br>
 
 ## Software Utilized
 
@@ -116,6 +132,8 @@ This project explores insights about hair salon appointments.
         <li>Microsoft Excel for Mac version 16.42</li>
 </details>
 
+<br>
+
 ## R Packages Utilized
 
 <details>
@@ -127,6 +145,8 @@ This project explores insights about hair salon appointments.
         <li>DT version 0.15</li>
 </details>
 
+<br>
+
 ## VS Code Extensions (helpful for this project)
 
 <details>
@@ -135,6 +155,8 @@ This project explores insights about hair salon appointments.
         <li>Bracket Pair Colorizer 2 version 0.2.0</li>
         <li>vscode-icons version 11.0.0</li>
 </details>
+
+<br>
 
 ***
 
@@ -176,9 +198,16 @@ This project explores insights about hair salon appointments.
             <li><i>Data Table Options</i>, https://rstudio.github.io/DT/options.html. For creating filterable/searchable tables.</li>
             <li><i>Column alignment in DT datatable</i>, zx8754 and G. Cocca's answer, dated Sep 17, 2020 and Mar 2, 2016 at https://stackoverflow.com/questions/35749389/column-alignment-in-dt-datatable. For centering columns when using DT::datatable() in R.</li>
             <li>https://shields.io. Used for badges.</li>
-            <li><i>Is there a way to represent a directory tree in a Github README.md?</i>, joe sepi's answer, dated Aug 13, 2016. Use triple backticks to get ASCII tree to render properly in Markdown. 
+            <li><i>Is there a way to represent a directory tree in a Github README.md?</i>, joe sepi's answer, dated Aug 13, 2016. Use triple backticks to get ASCII tree to render properly in Markdown.</li>
+            <li><i>Update multiple rows in a single column in MySQL?</i>, https://www.tutorialspoint.com/update-multiple-rows-in-a-single-column-in-mysql. Referenced to write query to update Staff table with new names.</li>
         </ol>
 </details>
+
+***
+
+## Acknowledgements
+
+* Thanks to [@zschuster](https://github.com/zschuster) for suggesting to use a function to load packages for code modularity.
 
 ***
 
