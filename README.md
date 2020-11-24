@@ -200,6 +200,7 @@ This project explores insights about hair salon appointments.
             <li>https://shields.io. Used for badges.</li>
             <li><i>Is there a way to represent a directory tree in a Github README.md?</i>, joe sepi's answer, dated Aug 13, 2016. Use triple backticks to get ASCII tree to render properly in Markdown.</li>
             <li><i>Update multiple rows in a single column in MySQL?</i>, https://www.tutorialspoint.com/update-multiple-rows-in-a-single-column-in-mysql. Referenced to write query to update Staff table with new names.</li>
+            <li><i>In MySQL how to replace all NULL values in a particular field of a particular table?</i>, https://www.tutorialspoint.com/in-mysql-how-to-replace-all-null-values-in-a-particular-field-of-a-particular-table. Referenced for updating tables to replace NULL values to better facilitate table joins during data wrangling for modeling prep.</li>
         </ol>
 </details>
 
